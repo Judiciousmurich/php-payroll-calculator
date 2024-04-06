@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Employee Name: " . $employeeName . "<br>";
     echo "Basic Pay: $" . number_format($basicPay, 2) . "<br>";
     echo "Tax: $" . number_format($tax, 2) . "<br>";
-    echo "Net Pay: $" . number_format($netPay, 2);
+    // echo "Net Pay: $" . number_format($netPay, 2);
 }
 ?>
 
