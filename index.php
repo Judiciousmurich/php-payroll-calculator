@@ -1,21 +1,32 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $EmployeeName = $_POST['employeeName'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $employeeName = $_POST['employeeName'];
     $hoursWorked = $_POST['hoursWorked'];
     $ratePerHour = $_POST['ratePerHour'];
 
-    // CALCULATE NET PAY
-    $basicPay = $hoursWorked * ratePerHour;
+    // Calculate basic pay
+    $basicPay = $hoursWorked * $ratePerHour;
 
     // Calculate tax based on basic pay
+    if ($basicPay > 50000) {
+        $tax = $basicPay * 0.20;
+    } elseif ($basicPay >= 20000 && $basicPay <= 50000) {
+        $tax = $basicPay * 0.10;
+    } else {
+        $tax = 0;
+    }
+
+    // Calculate net pay
     $netPay = $basicPay - $tax;
 
-    echo "Employee Name: " . $EmployeeName . "<br>";
-    echo "Basic Pay: " . number_format($basicPay, 2) . "<br>";
+    echo "Employee Name: " . $employeeName . "<br>";
+    echo "Basic Pay: $" . number_format($basicPay, 2) . "<br>";
     echo "Tax: $" . number_format($tax, 2) . "<br>";
     echo "Net Pay: $" . number_format($netPay, 2);
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
