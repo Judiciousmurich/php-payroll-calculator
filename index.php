@@ -10,4 +10,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Calculate tax based on basic pay
     $netPay = $basicPay - $tax;
 
+    echo "Employee Name: " . $EmployeeName . "<br>";
+    echo "Basic Pay: " . number_format($basicPay, 2) . "<br>";
+    echo "Tax: $" . number_format($tax, 2) . "<br>";
+    echo "Net Pay: $" . number_format($netPay, 2);
+
 }
