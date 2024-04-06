@@ -4,4 +4,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $hoursWorked = $_POST['hoursWorked'];
     $ratePerHour = $_POST['ratePerHour'];
 
+    // CALCULATE NET PAY
+    $basicPay = $hoursWorked + ratePerHour;
 }
