@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Calculate basic pay
     $basicPay = $hoursWorked * $ratePerHour;
 
-    // Calculate tax based on basic pay
     if ($basicPay > 50000) {
         $tax = $basicPay * 0.20;
     } elseif ($basicPay >= 20000 && $basicPay <= 50000) {
@@ -30,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Payroll Calculator</title>
+    <title>Payroll Calculator.</title>
 </head>
 <body>
     <h2>Payroll Calculator</h2>
