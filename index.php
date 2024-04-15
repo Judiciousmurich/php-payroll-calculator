@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tax = 0;
     }
 
-    // Calculate net pay
     $netPay = $basicPay - $tax;
 
     echo "Employee Name: " . $employeeName . "<br>";
