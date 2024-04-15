@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hoursWorked = $_POST['hoursWorked'];
     $ratePerHour = $_POST['ratePerHour'];
 
-    // Calculate basic pay
     $basicPay = $hoursWorked * $ratePerHour;
 
     if ($basicPay > 50000) {
